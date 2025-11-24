@@ -1,0 +1,10 @@
+import express from "express";
+import cors from "cors";
+import { cfg } from "./config.js";
+import ping from "./routes/ping.js";
+const app = express();
+app.use(cors());
+app.use(express.json());
+app.use("/ping", ping);
+app.get("/health", (_, _res) => _.res?.json?.({ ok: true, url: cfg.url }));
+app.listen(cfg.port, () => console.log(`Validator running on ${cfg.port} → ${cfg.url}`));

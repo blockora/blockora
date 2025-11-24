@@ -1,0 +1,23 @@
+name: blockora
+description: Blockora mobile app
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.2.0
+  web3dart: ^2.7.2
+  flutter_secure_storage: ^9.0.0
+  jwt_decoder: ^2.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  assets:
+    - lib/abi/BORA.json
+    - lib/abi/LockupStaking.json
+    - lib/abi/RewardDistributor.json
+    - lib/abi/KYCAttestor.json
