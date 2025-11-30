@@ -27,7 +27,3 @@ contract BORA is ERC20, Ownable {
                                                                                 _mint(rewardsReceiver, rewardsAmount);
                                     }
 }
-                                                                )
-                                    }
-                )
-}
