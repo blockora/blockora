@@ -1,18 +1,17 @@
 {
-    "compilerOptions": {
-        "target": "ES2020",
-            "module": "NodeNext",
-                "moduleResolution": "NodeNext",
-                    "strict": true,
-                        "esModuleInterop": true,
-                            "resolveJsonModule": true,
-                                "types": ["node", "mocha"]
-                                  },
-                                    "include": [
-                                        "./hardhat.config.ts",
-                                            "./contracts",
-                                                "./scripts",
-                                                    "./test"
-                                                      ]
-                                                      }
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "types": ["node", "mocha"]
+  },
+  "include": [
+    "./hardhat.config.ts",
+    "./contracts",
+    "./scripts",
+    "./test"
+  ]
 }
