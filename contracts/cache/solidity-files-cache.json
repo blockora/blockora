@@ -268,8 +268,8 @@
       ]
     },
     "/workspaces/blockora/contracts/contracts/BORA.sol": {
-      "lastModificationDate": 1764490731063,
-      "contentHash": "70e2b4f0affe0c70458a860d7e5fff86",
+      "lastModificationDate": 1764615785303,
+      "contentHash": "6d3045d71172f7058bb8e7bde405f698",
       "sourceName": "contracts/contracts/BORA.sol",
       "solcConfig": {
         "version": "0.8.23",
@@ -297,6 +297,7 @@
       },
       "imports": [
         "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
         "@openzeppelin/contracts/access/Ownable.sol"
       ],
       "versionPragmas": [
