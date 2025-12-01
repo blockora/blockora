@@ -1,0 +1,8 @@
+cd ~/workspaces/blockora
+(await bora.totalSupply()).toString();
+await bora.symbol();
+await bora.name();
+);
+  "0x1cbd71164c2440A52Ca334a1AE5cD566050E93D1"
+  "BORA",
+const bora = await ethers.getContractAt(
