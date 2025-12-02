@@ -1,5 +1,4 @@
-import hre from "hardhat";
-const { ethers } = hre;
+import { ethers } from "hardhat";
 
 async function main() {
   const founder = process.env.FOUNDER_ADDRESS!;
