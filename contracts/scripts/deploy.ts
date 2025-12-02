@@ -1,14 +1,14 @@
 import hre from "hardhat";
-import { ethers } from "ethers";
+const { ethers } = hre;
 
 async function main() {
   const founder = process.env.FOUNDER_ADDRESS!;
     const rewards = process.env.REWARDS_RECEIVER!;
 
-      const founderAmount = hre.ethers.parseEther("30000000");
-        const rewardsAmount = hre.ethers.parseEther("70000000");
+      const founderAmount = ethers.parseEther("30000000");
+        const rewardsAmount = ethers.parseEther("70000000");
 
-          const BORA = await hre.ethers.getContractFactory("BORA");
+          const BORA = await ethers.getContractFactory("BORA");
             const bora = await BORA.deploy(
                 founder,
                     founderAmount,
@@ -18,28 +18,28 @@ async function main() {
                                 await bora.waitForDeployment();
                                   console.log("BORA:", await bora.getAddress());
 
-                                    const Lock = await hre.ethers.getContractFactory("LockupStaking");
+                                    const Lock = await ethers.getContractFactory("LockupStaking");
                                       const lock = await Lock.deploy(await bora.getAddress());
                                         await lock.waitForDeployment();
                                           console.log("LockupStaking:", await lock.getAddress());
 
-                                            const Fee = await hre.ethers.getContractFactory("FeeManager");
+                                            const Fee = await ethers.getContractFactory("FeeManager");
                                               const fee = await Fee.deploy(await bora.getAddress(), founder, rewards);
                                                 await fee.waitForDeployment();
                                                   console.log("FeeManager:", await fee.getAddress());
 
-                                                    const KYC = await hre.ethers.getContractFactory("KYCAttestor");
+                                                    const KYC = await ethers.getContractFactory("KYCAttestor");
                                                       const kyc = await KYC.deploy();
                                                         await kyc.waitForDeployment();
                                                           console.log("KYCAttestor:", await kyc.getAddress());
 
-                                                            const RD = await hre.ethers.getContractFactory("RewardDistributor");
+                                                            const RD = await ethers.getContractFactory("RewardDistributor");
                                                               const rd = await RD.deploy(await bora.getAddress());
                                                                 await rd.waitForDeployment();
                                                                   console.log("RewardDistributor:", await rd.getAddress());
                                                                   }
 
-                                                                  main().catch((e) => {
-                                                                    console.error(e);
+                                                                  main().catch((err) => {
+                                                                    console.error(err);
                                                                       process.exit(1);
                                                                       });
